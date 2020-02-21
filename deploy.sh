@@ -84,17 +84,35 @@ spec:
   host: frontend
 EOF
 
+
 #cat <<EOF | oc create -n $PROJ -f -
+#apiVersion: networking.istio.io/v1alpha3
+#kind: Gateway
+#metadata:
+#  name: frontend-gateway
+#spec:
+#  selector:
+#    istio: ingressgateway
+#  servers:
+#  - hosts:
+#    - '*'
+#    port:
+#      name: http
+#      number: 80
+#      protocol: HTTP
+#---
 #apiVersion: networking.istio.io/v1alpha3
 #kind: VirtualService
 #metadata:
 #  name: frontend
 #spec:
 #  hosts:
-#  - frontend
+#  - '*'
 #  http:
 #  - route:
 #    - destination:
 #        host: frontend
+#        port:
+#          number: 8080
 #      weight: 100
 #EOF
