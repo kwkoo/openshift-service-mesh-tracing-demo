@@ -9,8 +9,12 @@ It consists of 2 components:
 
 To deploy this demo,
 
-* Install OpenShift Service Mesh by following the instructions in the [OpenShift docs](https://docs.openshift.com/container-platform/4.3/service_mesh/service_mesh_install/installing-ossm.html).
-* When you get to the step where you create the `ServiceMeshMemberRoll`, include the `demo` project as a member.
+* Install OpenShift Service Mesh by performing one of the following:
+	* Executing the `install_service_mesh.sh` script.
+
+	or
+	
+	* Performing a manual installation by following the instructions in the [OpenShift docs](https://docs.openshift.com/container-platform/4.3/service_mesh/service_mesh_install/installing-ossm.html). When you get to the step where you create the `ServiceMeshMemberRoll`, include the `demo` project as a member.
 * Deploy the frontend and backend by executing the `deploy.sh` script.
 * After the deployment is completed, send requests to the frontend by executing the `curl.sh` script.
 
